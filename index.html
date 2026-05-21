@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casarão 43 - Espaço de Eventos Premium em Rio Bonito - RJ</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="src/logo-casarao-43-branco-completa.png" type="image/png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS para Banners -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#B49C6C',
+                            light: '#D1C09E',
+                            dark: '#937E52'
+                        },
+                        charcoal: {
+                            DEFAULT: '#333333',
+                            light: '#4F4F4F',
+                            dark: '#1F1F1F'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .swiper-button-next, .swiper-button-prev {
+            color: #B49C6C !important;
+        }
+        .swiper-pagination-bullet-active {
+            background: #B49C6C !important;
+        }
+        .glassmorphism {
+            background: rgba(31, 31, 31, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(180, 156, 108, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-charcoal text-white font-sans overflow-x-hidden">
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/5521967724343?text=Olá! Gostaria de solicitar um orçamento para o Casarão 43." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#128C7E] text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+       aria-label="Fale Connosco no WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap font-medium text-sm pl-0 group-hover:pl-2">
+            Fale Connosco
+        </span>
+    </a>
+
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <nav class="fixed top-0 w-full z-40 transition-all duration-300 glassmorphism" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-24">
+                <div class="flex-shrink-0 flex items-center">
+                    <img class="h-14 sm:h-16 w-auto transition-transform hover:scale-105" src="src/logo-casarao-43-branco-completa.png" alt="Casarão 43">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8 text-sm uppercase tracking-widest font-medium">
+                        <a href="#inicio" class="text-white hover:text-gold transition-colors duration-200">Início</a>
+                        <a href="#sobre" class="text-white hover:text-gold transition-colors duration-200">O Casarão</a>
+                        <a href="#eventos" class="text-white hover:text-gold transition-colors duration-200">Eventos</a>
+                        <a href="#estrutura" class="text-white hover:text-gold transition-colors duration-200">Estrutura</a>
+                        <a href="#suite-presidencial" class="text-white hover:text-gold transition-colors duration-200">Suíte Master</a>
+                        <a href="#galeria" class="text-white hover:text-gold transition-colors duration-200">Galeria</a>
+                        <a href="#contato" class="bg-gold hover:bg-gold-dark text-charcoal px-5 py-2.5 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-0.5">Orçamento</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gold hover:text-white focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div class="hidden md:hidden transition-all duration-300" id="mobile-menu">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 bg-charcoal border-b border-gold/20">
+                <a href="#inicio" onclick="toggleMenu()" class="text-white hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Início</a>
+                <a href="#sobre" onclick="toggleMenu()" class="text-white hover:text-gold block px-3 py-2 rounded-md text-base font-medium">O Casarão</a>
+                <a href="#eventos" onclick="toggleMenu()" class="text-white hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Eventos</a>
+                <a href="#estrutura" onclick="toggleMenu()" class="text-white hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Estrutura</a>
+                <a href="#suite-presidencial" onclick="toggleMenu()" class="text-white hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Suíte Master</a>
+                <a href="#galeria" onclick="toggleMenu()" class="text-white hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Galeria</a>
+                <a href="#contato" onclick="toggleMenu()" class="bg-gold text-charcoal block px-3 py-2.5 rounded-md text-base font-semibold text-center">Solicitar Orçamento</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECÇÃO HERO -->
+    <header id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Slider de Fundo -->
+        <div class="absolute inset-0 z-0">
+            <div class="swiper heroSwiper h-full w-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('src/Casarao-43-Aerea-1.jpg');"></div>
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('src/Casarao-43-Salao-Principal-4.jpg');"></div>
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('src/Casarao-43-Externa-5.jpg');"></div>
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('src/Suite-Master-10.jpg');"></div>
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('src/Casarao-43-Aerea-2.jpg');"></div>
+                </div>
+                <!-- Camada Escura Gradiente -->
+                <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/40 z-10"></div>
+            </div>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto mt-12 sm:mt-0">
+            <img class="h-28 sm:h-40 mx-auto mb-8 animate-fade-in" src="src/logo-casarao-43-branco-completa.png" alt="Casarão 43 Logo">
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-semibold text-white tracking-wide leading-tight mb-6">
+                Onde os seus grandes momentos <br class="hidden sm:inline">
+                <span class="text-gold italic">se tornam memoráveis</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Localizado na prestigiada avenida de Rio Bonito - RJ, o cenário ideal que alia sofisticação histórica, conforto moderno e infraestrutura topo de gama.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="#contato" class="w-full sm:w-auto bg-gold hover:bg-gold-dark text-charcoal font-bold text-base px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105 tracking-wider uppercase">
+                    Agendar uma Visita
+                </a>
+                <a href="#sobre" class="w-full sm:w-auto border border-white hover:border-gold hover:text-gold text-white font-semibold text-base px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 tracking-wider uppercase glassmorphism">
+                    Conhecer o Espaço
+                </a>
+            </div>
+        </div>
+
+        <!-- Indicador de Scroll -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden sm:flex flex-col items-center gap-2">
+            <span class="text-xs uppercase tracking-widest text-gold font-medium">Deslize para explorar</span>
+            <div class="w-[2px] h-12 bg-gradient-to-b from-gold to-transparent animate-pulse"></div>
+        </div>
+    </header>
+
+    <!-- SECÇÃO SOBRE O CASARÃO -->
+    <section id="sobre" class="py-24 bg-gradient-to-b from-charcoal to-charcoal-dark relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                <!-- Imagem Principal de Destaque -->
+                <div class="lg:col-span-5 relative group">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-gold to-gold-dark rounded-2xl blur-lg opacity-30 group-hover:opacity-55 transition duration-1000"></div>
+                    <div class="relative bg-charcoal rounded-2xl overflow-hidden border border-gold/30">
+                        <img src="src/Casarao-43-Aerea-2.jpg" alt="Casarão 43 Vista Frontal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
+                    </div>
+                </div>
+
+                <!-- Detalhes e Texto Informativo -->
+                <div class="lg:col-span-7">
+                    <span class="text-gold font-semibold uppercase tracking-widest text-sm block mb-3">Bem-vindo ao Casarão 43</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-semibold mb-6 leading-tight">
+                        Elegância no centro de <br>
+                        <span class="text-gold">Rio Bonito – RJ</span>
+                    </h2>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        Localizado a meros **100 metros** da icónica e histórica **Igreja Matriz**, e situado na avenida mais nobre e central da cidade, o Casarão 43 ergue-se como a mais moderna e sofisticada casa de festas da região de Rio Bonito-RJ.
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                        Combinamos com mestria a imponente presença e o charme de uma arquitetura clássica com uma infraestrutura interna inteiramente renovada e planeada para eventos de luxo. Cada canto foi minuciosamente projetado para garantir o máximo requinte, comodidade e segurança para si e para os seus convidados.
+                    </p>
+
+                    <!-- Ícones Rápidos -->
+                    <div class="grid grid-cols-2 gap-6 sm:gap-8 border-t border-gold/20 pt-8">
+                        <div class="flex items-start gap-4">
+                            <div class="text-gold text-2xl mt-1"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4 class="font-semibold text-white">Localização Nobre</h4>
+                                <p class="text-sm text-gray-400">Acesso fácil e central na avenida principal.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-gold text-2xl mt-1"><i class="fas fa-church"></i></div>
+                            <div>
+                                <h4 class="font-semibold text-white">Próximo à Matriz</h4>
+                                <p class="text-sm text-gray-400">Excelente para casamentos com cerimónia religiosa próxima.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS DA ESTRUTURA -->
+    <section class="py-16 bg-charcoal-dark border-y border-gold/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full bg-charcoal border border-gold flex items-center justify-center text-gold text-2xl mb-4 group-hover:bg-gold group-hover:text-charcoal transition-all duration-300">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-1">100% Climatizado</h3>
+                    <p class="text-sm text-gray-400">Ambiente perfeitamente refrigerado.</p>
+                </div>
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full bg-charcoal border border-gold flex items-center justify-center text-gold text-2xl mb-4 group-hover:bg-gold group-hover:text-charcoal transition-all duration-300">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-1">Fácil Estacionar</h3>
+                    <p class="text-sm text-gray-400">Estacionamento simples e cómodo.</p>
+                </div>
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full bg-charcoal border border-gold flex items-center justify-center text-gold text-2xl mb-4 group-hover:bg-gold group-hover:text-charcoal transition-all duration-300">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-1">Gerador Próprio</h3>
+                    <p class="text-sm text-gray-400">Autonomia energética total.</p>
+                </div>
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full bg-charcoal border border-gold flex items-center justify-center text-gold text-2xl mb-4 group-hover:bg-gold group-hover:text-charcoal transition-all duration-300">
+                        <i class="fas fa-volume-mute"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-1">Tratamento Acústico</h3>
+                    <p class="text-sm text-gray-400">Isolamento sonoro profissional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIAS DE EVENTOS -->
+    <section id="eventos" class="py-24 bg-charcoal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold font-semibold uppercase tracking-widest text-sm">O Cenário Perfeito</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-semibold mt-2 mb-4 text-white">Eventos com Distinção</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-gray-300 text-lg">Independentemente da ocasião, o Casarão 43 disponibiliza a estrutura ideal e modular para concretizar o seu projeto.</p>
+            </div>
+
+            <!-- Grelha de Eventos -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <!-- Evento Social -->
+                <div class="bg-charcoal-dark border border-gold/15 rounded-2xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col group hover:-translate-y-2 shadow-xl">
+                    <div class="relative h-96 overflow-hidden">
+                        <img src="src/casarao-43-eventos-sociais-626x1024.jpg" alt="Casamentos e Eventos Sociais" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal-dark via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-gold text-charcoal px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                            Sociais
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-semibold mb-4 text-white">Eventos Sociais</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                O cenário perfeito para tornar casamentos, bailes de debutantes, aniversários e formaturas em memórias eternas. A nossa estrutura moderna garante conforto acústico, térmico e uma sofisticação sem paralelo para acolher a sua família.
+                            </p>
+                        </div>
+                        <a href="#contato" onclick="preencherAssunto('Social')" class="inline-flex items-center text-gold font-semibold hover:text-white transition-colors gap-2 group-hover:translate-x-1 duration-300">
+                            Orçamento de Evento Social <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Evento Infantil -->
+                <div class="bg-charcoal-dark border border-gold/15 rounded-2xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col group hover:-translate-y-2 shadow-xl">
+                    <div class="relative h-96 overflow-hidden">
+                        <img src="src/casarao-43-eventos-infantis-626x1024.jpg" alt="Festas Infantis" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal-dark via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-gold text-charcoal px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                            Infantil
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-semibold mb-4 text-white">Eventos Infantis</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                Transforme o aniversário dos pequenos num autêntico conto de fadas! Um salão amplo, extremamente seguro e versátil que possibilita criar fantásticos cenários temáticos e organizar atividades tanto no interior como no exterior.
+                            </p>
+                        </div>
+                        <a href="#contato" onclick="preencherAssunto('Infantil')" class="inline-flex items-center text-gold font-semibold hover:text-white transition-colors gap-2 group-hover:translate-x-1 duration-300">
+                            Orçamento de Festa Infantil <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Evento Corporativo -->
+                <div class="bg-charcoal-dark border border-gold/15 rounded-2xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col group hover:-translate-y-2 shadow-xl">
+                    <div class="relative h-96 overflow-hidden">
+                        <img src="src/casarao-43-corporativo-626x1024.jpg" alt="Palestras e Eventos Empresariais" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal-dark via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-gold text-charcoal px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                            Corporativo
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-2xl font-semibold mb-4 text-white">Eventos Corporativos</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                Soluções chave-na-mão para reuniões, conferências, lançamentos de marcas e jantares de gala empresariais. Garanta facilidade de acesso aos seus parceiros, num ambiente requintado ideal para fechar grandes parcerias.
+                            </p>
+                        </div>
+                        <a href="#contato" onclick="preencherAssunto('Corporativo')" class="inline-flex items-center text-gold font-semibold hover:text-white transition-colors gap-2 group-hover:translate-x-1 duration-300">
+                            Orçamento de Corporativo <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFRAESTRUTURA: SALÃO E ÁREA EXTERNA -->
+    <section id="estrutura" class="py-24 bg-gradient-to-b from-charcoal-dark to-charcoal relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <!-- Informações e Detalhes da Estrutura à Esquerda -->
+                <div class="lg:col-span-6">
+                    <span class="text-gold font-semibold uppercase tracking-widest text-sm">Infraestrutura Excecional</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-semibold mt-2 mb-6 text-white">Arquitetura de Excelência</h2>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                        Cada ambiente do Casarão 43 foi desenhado para proporcionar elegância fluida, conectando o monumental salão climatizado a uma belíssima área ao ar livre com piscina.
+                    </p>
+
+                    <!-- Lista de Estruturas -->
+                    <div class="space-y-6">
+                        <!-- Salão Principal -->
+                        <div class="flex gap-4 p-5 bg-charcoal border-l-4 border-gold rounded-r-xl shadow-md">
+                            <div class="text-gold text-3xl"><i class="fas fa-vector-square"></i></div>
+                            <div>
+                                <h3 class="font-semibold text-lg text-white">Salão de Eventos Principal (400 m²)</h3>
+                                <p class="text-sm text-gray-400 mt-1">Capacidade confortável para até 300 convidados. Um amplo pavilhão com excelente iluminação embutida, ar-condicionado central de última geração e acústica impecável.</p>
+                            </div>
+                        </div>
+
+                        <!-- Espaço Externo -->
+                        <div class="flex gap-4 p-5 bg-charcoal/50 hover:bg-charcoal transition-all duration-300 border-l-4 border-transparent hover:border-gold rounded-r-xl">
+                            <div class="text-gold text-3xl"><i class="fas fa-swimmer"></i></div>
+                            <div>
+                                <h3 class="font-semibold text-lg text-white">Área de Lazer e Espaço Externo</h3>
+                                <p class="text-sm text-gray-400 mt-1">Espaço gourmet com piscina decorativa iluminada, bar de apoio completo com chopeira profissional integrada, churrasqueira e infraestrutura de WC independente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mídia da Estrutura à Direita -->
+                <div class="lg:col-span-6 relative">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-gold to-gold-dark rounded-2xl blur-lg opacity-25"></div>
+                    <div class="relative bg-charcoal rounded-2xl overflow-hidden border border-gold/30">
+                        <img src="src/Casarao-43-Salao-Principal-4.jpg" alt="Vista interna do Salão Principal voltado para a piscina" class="w-full h-[450px] object-cover">
+                        <!-- Card Flutuante de Capacidade -->
+                        <div class="absolute bottom-6 left-6 glassmorphism p-6 rounded-xl border border-gold/30 flex items-center gap-4">
+                            <div class="text-gold text-4xl"><i class="fas fa-users"></i></div>
+                            <div>
+                                <div class="text-2xl font-bold text-white">300 Pessoas</div>
+                                <div class="text-xs uppercase tracking-wider text-gray-300 font-medium">Capacidade Máxima</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECÇÃO DETALHADA: SUÍTE MASTER (PRESIDENCIAL) -->
+    <section id="suite-presidencial" class="py-24 bg-charcoal-dark border-t border-gold/15 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Grelha de Fotos da Suíte à Esquerda (Estilo Editorial) -->
+                <div class="lg:col-span-6 order-2 lg:order-1">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <div class="relative rounded-xl overflow-hidden border border-gold/20 group cursor-pointer" onclick="openLightbox('src/Suite-Master-10.jpg')">
+                                <img src="src/Suite-Master-10.jpg" alt="Quarto Principal da Suíte Master" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black/30 flex items-end p-3"><span class="text-xs font-semibold uppercase tracking-wider">Acomodações</span></div>
+                            </div>
+                            <div class="relative rounded-xl overflow-hidden border border-gold/20 group cursor-pointer" onclick="openLightbox('src/Suite-Master-11.jpg')">
+                                <img src="src/Suite-Master-11.jpg" alt="Casa de Banho da Suíte Master" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black/30 flex items-end p-3"><span class="text-xs font-semibold uppercase tracking-wider">Duplo Lavatório</span></div>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <div class="relative rounded-xl overflow-hidden border border-gold/20 group cursor-pointer" onclick="openLightbox('src/Suite-Master-9.jpg')">
+                                <img src="src/Suite-Master-9.jpg" alt="Espelho de Maquilhagem" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black/30 flex items-end p-3"><span class="text-xs font-semibold uppercase tracking-wider">Zona de Maquilhagem</span></div>
+                            </div>
+                            <div class="relative rounded-xl overflow-hidden border border-gold/20 group cursor-pointer" onclick="openLightbox('src/Suite-Master-12.jpg')">
+                                <img src="src/Suite-Master-12.jpg" alt="Banheira de Imersão Premium" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black/30 flex items-end p-3"><span class="text-xs font-semibold uppercase tracking-wider">Banheira de Imersão</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detalhes e Textos à Direita -->
+                <div class="lg:col-span-6 order-1 lg:order-2">
+                    <span class="text-gold font-semibold uppercase tracking-widest text-sm">Preparação de Sonho</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-semibold mt-2 mb-6 text-white">Suíte Presidencial <br><span class="text-gold italic">de Altíssimo Luxo</span></h2>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        O dia do sim merece um santuário de tranquilidade e sofisticação. A nossa **Suíte Master** foi minuciosamente desenhada para oferecer um camarim de sonho à noiva e um quarto exclusivo de apoio para o noivo e acompanhantes mais próximos.
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                        Um refúgio equipado com espelho iluminado de maquilhagem profissional, área de estar acolhedora e uma imponente casa de banho revestida a mármore que conta com lavatório duplo e uma relaxante banheira de imersão de design minimalista.
+                    </p>
+
+                    <!-- Pormenores da Suíte em Grelha -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 border-t border-gold/20 pt-8">
+                        <div class="flex items-center gap-3">
+                            <span class="text-gold text-xl"><i class="fas fa-spa"></i></span>
+                            <span class="text-sm font-medium text-gray-200">Camarim de Maquilhagem Profissional</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-gold text-xl"><i class="fas fa-bath"></i></span>
+                            <span class="text-sm font-medium text-gray-200">Banheira de Imersão com Misturadoras em Dourado</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-gold text-xl"><i class="fas fa-couch"></i></span>
+                            <span class="text-sm font-medium text-gray-200">Salão Privativo com Sofá e Lounge</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-gold text-xl"><i class="fas fa-wind"></i></span>
+                            <span class="text-sm font-medium text-gray-200">Apoio a Madrinhas e Familiares</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA DE FOTOS INTERATIVA COM SISTEMA DE FILTROS -->
+    <section id="galeria" class="py-24 bg-charcoal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-gold font-semibold uppercase tracking-widest text-sm">Visita Virtual</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-semibold mt-2 mb-4 text-white">Galeria do Casarão 43</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-gray-300 text-lg">Selecione uma categoria para descobrir cada detalhe da nossa luxuosa estrutura.</p>
+            </div>
+
+            <!-- Botões de Filtragem -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12" id="gallery-filters">
+                <button onclick="filterGallery('all')" class="gallery-btn active bg-gold text-charcoal font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full transition-all duration-300 tracking-wider uppercase border border-gold">Todas as Fotos</button>
+                <button onclick="filterGallery('exterior')" class="gallery-btn bg-transparent text-white border border-white/20 hover:border-gold hover:text-gold font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full transition-all duration-300 tracking-wider uppercase">Área Externa & Lazer</button>
+                <button onclick="filterGallery('salao')" class="gallery-btn bg-transparent text-white border border-white/20 hover:border-gold hover:text-gold font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full transition-all duration-300 tracking-wider uppercase">Salão Principal</button>
+                <button onclick="filterGallery('suite')" class="gallery-btn bg-transparent text-white border border-white/20 hover:border-gold hover:text-gold font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full transition-all duration-300 tracking-wider uppercase">Suíte Master</button>
+                <button onclick="filterGallery('aereas')" class="gallery-btn bg-transparent text-white border border-white/20 hover:border-gold hover:text-gold font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full transition-all duration-300 tracking-wider uppercase">Vistas Aéreas & Fachada</button>
+            </div>
+
+            <!-- Grelha de Imagens com Filtros Dinâmicos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                
+                <!-- CATEGORIA: ÁREA EXTERNA -->
+                <div class="gallery-item exterior group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Casarao-43-Externa-3.jpg')">
+                    <img src="src/Casarao-43-Externa-3.jpg" alt="Área Externa Completa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item exterior group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Casarao-43-Externa-5.jpg')">
+                    <img src="src/Casarao-43-Externa-5.jpg" alt="Piscina com Palmeiras" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item exterior group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Casarao-43-Externa-6.jpg')">
+                    <img src="src/Casarao-43-Externa-6.jpg" alt="Pátio Gourmet Coberto" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item exterior group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Casarao-43-Externa-9.jpg')">
+                    <img src="src/Casarao-43-Externa-9.jpg" alt="Parede com Logótipo Casarão 43" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item exterior group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Casarao-43-Externa-11.jpg')">
+                    <img src="src/Casarao-43-Externa-11.jpg" alt="Chopeira Profissional Instalada" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <!-- CATEGORIA: SALÃO PRINCIPAL -->
+                <div class="gallery-item salao group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Casarao-43-Salao-Principal.jpg')">
+                    <img src="src/Casarao-43-Salao-Principal.jpg" alt="Grande Salão de Eventos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item salao group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Casarao-43-Salao-Principal-4.jpg')">
+                    <img src="src/Casarao-43-Salao-Principal-4.jpg" alt="Salão com Vista para Área Externa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item salao group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Casarao-43-Salao-Principal-5.jpg')">
+                    <img src="src/Casarao-43-Salao-Principal-5.jpg" alt="Salão Arcos de Entrada com Cobertura de Vidro" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <!-- CATEGORIA: SUÍTE MASTER -->
+                <div class="gallery-item suite group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Suite-Master-10.jpg')">
+                    <img src="src/Suite-Master-10.jpg" alt="Quarto de Luxo Suíte Master" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item suite group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Suite-Master-11.jpg')">
+                    <img src="src/Suite-Master-11.jpg" alt="Casa de Banho Luxuosa em Mármore" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item suite group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Suite-Master-12.jpg')">
+                    <img src="src/Suite-Master-12.jpg" alt="Banheira de Design de Imersão" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item suite group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Suite-Master-7.jpg')">
+                    <img src="src/Suite-Master-7.jpg" alt="Zona de Estar da Suíte com Poltronas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item suite group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Suite-Master-8.jpg')">
+                    <img src="src/Suite-Master-8.jpg" alt="Cama King Size" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item suite group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Suite-Master-14.jpg')">
+                    <img src="src/Suite-Master-14.jpg" alt="Toucador Duplo da Suíte Master" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <!-- CATEGORIA: VISTAS AÉREAS -->
+                <div class="gallery-item aereas group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Casarao-43-Aerea-1.jpg')">
+                    <img src="src/Casarao-43-Aerea-1.jpg" alt="Vista Aérea Angulada" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item aereas group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Casarao-43-Aerea-2.jpg')">
+                    <img src="src/Casarao-43-Aerea-2.jpg" alt="Vista Aérea Frontal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item aereas group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Casarao-43-Aerea-3.jpg')">
+                    <img src="src/Casarao-43-Aerea-3.jpg" alt="Vista Aérea Vertical Nadir" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item aereas group relative cursor-pointer overflow-hidden rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 h-64" onclick="openLightbox('src/Casarao-43-Aerea-4.jpg')">
+                    <img src="src/Casarao-43-Aerea-4.jpg" alt="Vista Aérea com Enquadramento Urbano" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white border border-white/50 px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase"><i class="fas fa-search-plus mr-2"></i>Ampliar</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL DE AMPLIAÇÃO -->
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden flex items-center justify-center p-4 transition-all duration-300" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white hover:text-gold text-4xl transition-colors focus:outline-none" onclick="closeLightbox()">&times;</button>
+        <div class="max-w-5xl max-h-[85vh] overflow-hidden rounded-lg border border-gold/20 shadow-2xl" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="Ampliação Casarão 43" class="w-full h-full object-contain">
+        </div>
+    </div>
+
+    <!-- CONTACTO E ORÇAMENTO VIA WHATSAPP -->
+    <section id="contato" class="py-24 bg-gradient-to-t from-charcoal-dark to-charcoal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                
+                <!-- Informações à Esquerda -->
+                <div class="lg:col-span-5 flex flex-col justify-between">
+                    <div>
+                        <span class="text-gold font-semibold uppercase tracking-widest text-sm">Fale Connosco</span>
+                        <h2 class="font-serif text-3xl sm:text-5xl font-semibold mt-2 mb-6 text-white">Inicie o seu Planeamento</h2>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                            A nossa equipa está pronta para criar uma proposta personalizada à medida do seu evento. Reserve a sua data especial no Casarão 43!
+                        </p>
+
+                        <!-- Informações Gerais de Contacto -->
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="text-gold text-2xl mt-1"><i class="fas fa-map-marked-alt"></i></div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Localização</h4>
+                                    <p class="text-gray-400 text-sm mt-1">Av. Sete de Maio, 43 - Centro - Rio Bonito - RJ</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="text-gold text-2xl mt-1"><i class="fab fa-whatsapp"></i></div>
+                                <div>
+                                    <h4 class="font-semibold text-white">WhatsApp de Atendimento</h4>
+                                    <p class="text-gray-400 text-sm mt-1">(21) 96772-4343</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="text-gold text-2xl mt-1"><i class="fab fa-instagram"></i></div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Siga-nos</h4>
+                                    <p class="text-gray-400 text-sm mt-1">
+                                        <a href="https://www.instagram.com/casarao43_" target="_blank" class="hover:text-gold transition-colors">@casarao43_</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Logotipo no Rodapé (Desktop) -->
+                    <div class="mt-12 lg:mt-0 pt-8 border-t border-gold/15 hidden lg:block">
+                        <img src="src/logo-casarao-43-branco-completa.png" alt="Logótipo Casarão 43" class="h-16 opacity-70">
+                    </div>
+                </div>
+
+                <!-- Formulário de Orçamento à Direita -->
+                <div class="lg:col-span-7">
+                    <div class="bg-charcoal-dark border border-gold/20 p-8 sm:p-10 rounded-2xl shadow-xl relative">
+                        <h3 class="font-serif text-2xl font-semibold text-white mb-6">Solicitar Proposta Exclusiva</h3>
+                        
+                        <form id="orcamentoForm" onsubmit="enviarWhatsApp(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="nome" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Nome Completo</label>
+                                    <input type="text" id="nome" required class="w-full bg-charcoal border border-gold/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors">
+                                </div>
+                                <div>
+                                    <label for="telefone" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">WhatsApp / Telemóvel</label>
+                                    <input type="tel" id="telefone" placeholder="(21) 9XXXX-XXXX" required class="w-full bg-charcoal border border-gold/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="tipo_evento" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Tipo de Celebração</label>
+                                    <select id="tipo_evento" class="w-full bg-charcoal border border-gold/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors">
+                                        <option value="Casamento">Casamento / Social</option>
+                                        <option value="Infantil">Aniversário Infantil</option>
+                                        <option value="Corporativo">Evento de Empresa</option>
+                                        <option value="Outro">Outro Evento Especial</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="convidados" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Estimativa de Convidados</label>
+                                    <select id="convidados" class="w-full bg-charcoal border border-gold/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors">
+                                        <option value="Até 100 pessoas">Até 100 pessoas</option>
+                                        <option value="Entre 100 e 200 pessoas">De 100 a 200 pessoas</option>
+                                        <option value="Entre 200 e 300 pessoas">De 200 a 300 pessoas</option>
+                                        <option value="Mais de 300 pessoas">Mais de 300 pessoas</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="data" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Data Pretendida (Estimativa)</label>
+                                <input type="date" id="data" class="w-full bg-charcoal border border-gold/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors">
+                            </div>
+
+                            <div>
+                                <label for="mensagem" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Pormenores Adicionais ou Desejos</label>
+                                <textarea id="mensagem" rows="3" placeholder="Ex: Gostaria de usar a suíte master para preparação, buffet incluído..." class="w-full bg-charcoal border border-gold/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-gold hover:bg-gold-dark text-charcoal font-bold text-base py-4 rounded-lg tracking-wider uppercase transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3 shadow-lg cursor-pointer">
+                                <i class="fab fa-whatsapp text-xl"></i> Receber Detalhes via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-charcoal-dark border-t border-gold/15 py-12 text-center text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
+                <img src="src/logo-casarao-43-branco-completa.png" alt="Casarão 43 Logo Footer" class="h-12 opacity-80">
+                <div class="flex gap-6 text-xl">
+                    <a href="https://www.instagram.com/casarao43_" target="_blank" class="text-gray-400 hover:text-gold transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5521967724343" target="_blank" class="text-gray-400 hover:text-gold transition-colors"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gold/5 pt-8 text-center text-xs">
+                <p>&copy; 2026 Casarão 43. Todos os direitos reservados. Centro, Rio Bonito - RJ.</p>
+                <p class="mt-2 text-gray-600">Desenvolvido com sofisticação e excelência arquitetónica.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS para Slider -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Inicialização do Slider principal no topo
+        const swiper = new Swiper('.heroSwiper', {
+            loop: true,
+            effect: 'fade',
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            speed: 1500,
+        });
+
+        // Controlo do Menu Responsivo no Mobile
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.className = 'fas fa-times text-2xl';
+            } else {
+                menu.classList.add('hidden');
+                icon.className = 'fas fa-bars text-2xl';
+            }
+        }
+
+        // Modifica background da navbar após scroll do utilizador
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.style.backgroundColor = 'rgba(31, 31, 31, 0.95)';
+                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+            } else {
+                nav.style.backgroundColor = 'rgba(31, 31, 31, 0.75)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Função de Controlo do Filtro da Galeria
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.gallery-btn');
+
+            // Atualiza botões ativos
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-gold', 'text-charcoal', 'active');
+                btn.classList.add('bg-transparent', 'text-white', 'border-white/20');
+            });
+
+            // Aplica estilos adequados no botão selecionado
+            const activeBtn = event.currentTarget;
+            activeBtn.classList.remove('bg-transparent', 'text-white', 'border-white/20');
+            activeBtn.classList.add('bg-gold', 'text-charcoal', 'active');
+
+            // Filtra os itens da grelha
+            items.forEach(item => {
+                if (category === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.classList.contains(category)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Lógica de abertura do Lightbox
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imgSrc;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Evita scroll da página de fundo
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = ''; // Restaura o scroll
+        }
+
+        // Seleção rápida de tipo de evento nos botões superiores
+        function preencherAssunto(tipo) {
+            const select = document.getElementById('tipo_evento');
+            select.value = tipo;
+            document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Lógica de Envio dos Dados de Contacto para o WhatsApp
+        function enviarWhatsApp(e) {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const tipoEvento = document.getElementById('tipo_evento').value;
+            const convidados = document.getElementById('convidados').value;
+            const dataInput = document.getElementById('data').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            let dataFormatada = "Não especificada";
+            if (dataInput) {
+                const [ano, mes, dia] = dataInput.split('-');
+                dataFormatada = `${dia}/${mes}/${ano}`;
+            }
+
+            const textoMensagem = `Olá, Casarão 43! Gostaria de obter uma proposta comercial personalizada:\n\n` +
+                                  `*Nome:* ${nome}\n` +
+                                  `*Contacto:* ${telefone}\n` +
+                                  `*Tipo de Evento:* ${tipoEvento}\n` +
+                                  `*Convidados Estimados:* ${convidados}\n` +
+                                  `*Data Desejada:* ${dataFormatada}\n` +
+                                  `*Ideias e Observações:* ${mensagem ? mensagem : "Nenhuma"}`;
+
+            const urlWhatsApp = `https://wa.me/5521967724343?text=${encodeURIComponent(textoMensagem)}`;
+            
+            window.open(urlWhatsApp, '_blank');
+        }
+    </script>
+</body>
+</html>
